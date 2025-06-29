@@ -1,3 +1,6 @@
 .DS_STORE
 venv/
 __pycache__/
+.coverage
+/cov_html/
+.vscode/

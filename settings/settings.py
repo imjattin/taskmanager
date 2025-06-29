@@ -48,8 +48,6 @@ DEBUG = env.bool("DEBUG", default=False)
 # getting allowed hosts from env vars
 ALLOWED_HOSTS = getenv_default("ALLOWED_HOSTS").split(",")
 
-# AUTH_USER_MODEL = "accounts.UserAccount"
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -82,14 +80,18 @@ MIDDLEWARE = [
 
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
+        # This line enforces user authentication for all API views
         "rest_framework.permissions.IsAuthenticated",
     ],
     "DEFAULT_AUTHENTICATION_CLASSES": [
+        # This line sets JWT authentication as the default method
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ],
     "DEFAULT_FILTER_BACKENDS": [
+        # This line enables filtering capabilities in API views
         "django_filters.rest_framework.DjangoFilterBackend",
     ],
+    # This line sets the default pagination class for API responses
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 10,
 }
