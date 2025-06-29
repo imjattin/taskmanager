@@ -1,18 +1,5 @@
 [
     {
-        "model": "admin.logentry",
-        "pk": 1,
-        "fields": {
-            "action_time": "2025-06-28T14:01:26.386Z",
-            "user": 1,
-            "content_type": 7,
-            "object_id": "1",
-            "object_repr": "Task 1",
-            "action_flag": 1,
-            "change_message": "[{\"added\": {}}]"
-        }
-    },
-    {
         "model": "auth.permission",
         "pk": 1,
         "fields": {
@@ -232,35 +219,107 @@
         "model": "auth.permission",
         "pk": 25,
         "fields": {
-            "name": "Can add task",
+            "name": "Can add blacklisted token",
             "content_type": 7,
-            "codename": "add_task"
+            "codename": "add_blacklistedtoken"
         }
     },
     {
         "model": "auth.permission",
         "pk": 26,
         "fields": {
-            "name": "Can change task",
+            "name": "Can change blacklisted token",
             "content_type": 7,
-            "codename": "change_task"
+            "codename": "change_blacklistedtoken"
         }
     },
     {
         "model": "auth.permission",
         "pk": 27,
         "fields": {
-            "name": "Can delete task",
+            "name": "Can delete blacklisted token",
             "content_type": 7,
-            "codename": "delete_task"
+            "codename": "delete_blacklistedtoken"
         }
     },
     {
         "model": "auth.permission",
         "pk": 28,
         "fields": {
-            "name": "Can view task",
+            "name": "Can view blacklisted token",
             "content_type": 7,
+            "codename": "view_blacklistedtoken"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 29,
+        "fields": {
+            "name": "Can add outstanding token",
+            "content_type": 8,
+            "codename": "add_outstandingtoken"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 30,
+        "fields": {
+            "name": "Can change outstanding token",
+            "content_type": 8,
+            "codename": "change_outstandingtoken"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 31,
+        "fields": {
+            "name": "Can delete outstanding token",
+            "content_type": 8,
+            "codename": "delete_outstandingtoken"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 32,
+        "fields": {
+            "name": "Can view outstanding token",
+            "content_type": 8,
+            "codename": "view_outstandingtoken"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 33,
+        "fields": {
+            "name": "Can add task",
+            "content_type": 9,
+            "codename": "add_task"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 34,
+        "fields": {
+            "name": "Can change task",
+            "content_type": 9,
+            "codename": "change_task"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 35,
+        "fields": {
+            "name": "Can delete task",
+            "content_type": 9,
+            "codename": "delete_task"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 36,
+        "fields": {
+            "name": "Can view task",
+            "content_type": 9,
             "codename": "view_task"
         }
     },
@@ -298,10 +357,10 @@
             "date_joined": "2025-06-28T13:27:16Z",
             "groups": [],
             "user_permissions": [
-                25,
-                26,
-                27,
-                28
+                33,
+                34,
+                35,
+                36
             ]
         }
     },
@@ -375,16 +434,24 @@
         "model": "contenttypes.contenttype",
         "pk": 7,
         "fields": {
-            "app_label": "tasks",
-            "model": "task"
+            "app_label": "token_blacklist",
+            "model": "blacklistedtoken"
         }
     },
     {
-        "model": "sessions.session",
-        "pk": "5eplho1wnn19i7juxadpv6h7gk7lx593",
+        "model": "contenttypes.contenttype",
+        "pk": 8,
         "fields": {
-            "session_data": ".eJxVjDsOwjAQRO_iGln-x6akzxmsXXuNA8iR4qRC3J1ESgFTznszbxZhW2vcOi1xyuzKJLv8dgjpSe0A-QHtPvM0t3WZkB8KP2nn45zpdTvdv4MKve5rHRIShYK2eFWSVeAkeE_ZCWsGbZWTKJLIpAejISuVjIM9QWNBh4J9vvl7OH4:1uVVyY:dlzqgv3xs0kZMMoohCVx5BbO9EyJ5U89DOi-F-fo8Xo",
-            "expire_date": "2025-07-12T13:52:14.833Z"
+            "app_label": "token_blacklist",
+            "model": "outstandingtoken"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 9,
+        "fields": {
+            "app_label": "tasks",
+            "model": "task"
         }
     },
     {
